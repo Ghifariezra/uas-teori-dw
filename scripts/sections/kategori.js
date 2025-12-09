@@ -1,8 +1,9 @@
-export default async function renderKategori() {
-    const content = document.getElementById("content");
+export default async function renderKategori(){
+    const sectionContent = document.getElementById("content");
+    if (!sectionContent) return;
 
-    content.innerHTML = `
-        <h1 class="text-3xl font-bold mb-5">Kategori</h1>
-        <p>Daftar kategori akan ditampilkan di sini.</p>
-    `;
+    const res = await fetch("/components/kategori.html");
+    const html = await res.text();
+
+    sectionContent.innerHTML = html;
 }
