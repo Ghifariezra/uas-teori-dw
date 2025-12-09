@@ -13,55 +13,8 @@
 </head>
 
 <body class="min-h-screen bg-gray-100">
-    <header class="flex justify-between items-center p-8 bg-white shadow-md relative z-20">
-
-        <!-- Hamburger Mobile -->
-        <button id="hamburger-btn" class="block sm:hidden cursor-pointer" aria-label="Open Menu" role="button">
-            <svg id="icon-open" class="w-7 h-7 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-            </svg>
-            <svg id="icon-close" class="w-7 h-7 text-gray-800 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M6 18 17.94 6M18 18 6.06 6" />
-            </svg>
-        </button>
-
-        <!-- Logo -->
-        <a href="./index.html" class="flex items-center gap-2">
-            <span class="block w-12 h-12">
-                <img src="./assets/images/logo.jpeg" alt="logo pustakaNusa" class="w-full h-full object-cover">
-            </span>
-            <span class="hidden sm:block text-xl font-bold text-gray-800 tracking-wide">
-                PustakaNusa
-            </span>
-        </a>
-
-
-        <!-- Search Mobile -->
-        <div class="block sm:hidden">
-            <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                    d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-            </svg>
-        </div>
-
-        <!-- Navigation Desktop -->
-        <nav class="hidden sm:block">
-            <ul class="flex items-center space-x-6 font-medium">
-                <li><a data-page="beranda" class="hover:text-blue-600 cursor-pointer">Beranda</a></li>
-                <li><a data-page="kategori" class="hover:text-blue-600 cursor-pointer">Kategori</a></li>
-                <li>
-                    <svg class="w-6 h-6 text-gray-800 hover:text-blue-600 cursor-pointer"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                    </svg>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header -->
+    <header id="header" class="flex justify-between items-center p-8 bg-white shadow-md relative z-20"></header>
 
     <!-- Navigation Mobile -->
     <nav id="mobile-nav"
@@ -76,78 +29,18 @@
     <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen"> </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white mt-10 p-10 rounded-t-2xl shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
-        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
-        <!-- Section Intro -->
-        <div class="text-center mb-10">
-            <h2 class="text-xl md:text-2xl font-bold mb-2">
-                100% Platform Perpustakaan Digital Terpercaya di Indonesia
-            </h2>
-            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
-                PustakaNusa memberikan cara cepat dan mudah untuk mengakses buku digital.
-                Sistem kami dirancang agar pengelola perpustakaan dapat mengatur koleksi buku secara modern,
-                efisien, dan terstruktur.
-            </p>
-        </div>
-
-        <!-- Footer Menu -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-
-            <div>
-                <h3 class="font-bold text-lg mb-2">PustakaNusa</h3>
-                <p class="text-gray-300 text-sm">
-                    Solusi perpustakaan digital modern dengan fitur lengkap dan mudah digunakan.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="font-bold mb-2">Layanan</h3>
-                <p class="text-gray-300">Akses Buku Digital</p>
-                <p class="text-gray-300">Manajemen Koleksi</p>
-                <p class="text-gray-300">Integrasi Perpustakaan</p>
-            </div>
-
-            <div>
-                <h3 class="font-bold mb-2">Informasi</h3>
-                <p class="text-gray-300">Tentang Kami</p>
-                <p class="text-gray-300">Kebijakan Privasi</p>
-                <p class="text-gray-300">Bantuan</p>
-            </div>
-
-            <div>
-                <h3 class="font-bold mb-2">Ikuti Kami</h3>
-
-                <div class="flex items-center gap-2 text-gray-300">
-                    <span class="iconify w-5 h-5" data-icon="ri:facebook-fill"></span>
-                    <p>PustakaNusa</p>
-                </div>
-
-                <div class="flex items-center gap-2 text-gray-300">
-                    <span class="iconify w-5 h-5" data-icon="ri:instagram-fill"></span>
-                    <p>@pustakanusa</p>
-                </div>
-
-                <div class="flex items-center gap-2 text-gray-300">
-                    <span class="iconify w-5 h-5" data-icon="ri:youtube-fill"></span>
-                    <p>PustakaNusa Official</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Copyright -->
-        <p class="text-gray-400 text-xs mt-10 border-t border-white/10 pt-4 text-center">
-            Copyright © 2025 • PustakaNusa.com • Semua Hak Dilindungi
-        </p>
+    <footer id="footer" class="bg-blue-900 text-white mt-10 p-10 rounded-t-2xl shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
     </footer>
-
 
     <!-- Module -->
     <script defer type="module" src="scripts/toggle.js"></script>
-    <!-- <script defer type="module" src="scripts/pages.js"></script>
-    <script defer type="module" src="scripts/data/category.js"></script>
-    <script defer type="module" src="scripts/components/cards/category.js"></script>
-    <script defer type="module" src="scripts/components/menus/typeCategory.js"></script> -->
+    <script type="module">
+        import renderHeader from "./scripts/sections/header.js";
+        import renderFooter from "./scripts/sections/footer.js";
+
+        renderHeader();
+        renderFooter();
+    </script>
 </body>
 
 </html>
