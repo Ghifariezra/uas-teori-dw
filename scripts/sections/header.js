@@ -1,4 +1,5 @@
 import { initToggleMenu } from "../toggle.js";
+import { initSearchToggle } from "../search-handler.js";
 
 export default async function renderHeader() {
     const headerEl = document.getElementById("header");
@@ -10,4 +11,5 @@ export default async function renderHeader() {
     headerEl.innerHTML = html;
 
     initToggleMenu();
+    initSearchToggle();
 }
