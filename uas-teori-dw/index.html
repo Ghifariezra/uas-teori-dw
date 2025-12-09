@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth antialiased">
+
+<head>
+    <title>PustakaNusa</title>
+    <!-- <link rel="ico" type="image/x-icon" href="./assets/icons/newspaper.ico"> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gray-100">
+    <header class="flex justify-between items-center p-8 bg-white shadow-md relative z-20">
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold cursor-pointer select-none" data-page="beranda">PustakaNusa</h1>
+
+        <!-- Hamburger Mobile -->
+        <button id="hamburger-btn" class="block sm:hidden cursor-pointer" aria-label="Open Menu" role="button">
+            <svg id="icon-open" class="w-7 h-7 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+            </svg>
+            <svg id="icon-close" class="w-7 h-7 text-gray-800 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18 17.94 6M18 18 6.06 6" />
+            </svg>
+        </button>
+
+        <!-- Navigation Desktop -->
+        <nav class="hidden sm:block">
+            <ul class="flex items-center space-x-6 font-medium">
+                <li><a data-page="beranda" class="hover:text-blue-600 cursor-pointer">Beranda</a></li>
+                <li><a data-page="kategori" class="hover:text-blue-600 cursor-pointer">Katalog Buku</a></li>
+                <li><a data-page="tentang" class="hover:text-blue-600 cursor-pointer">Riwayat Buku</a></li>
+                <li><a data-page="kontak" class="hover:text-blue-600 cursor-pointer">Total Buku</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Navigation Mobile -->
+    <nav id="mobile-nav"
+        class="sm:hidden bg-white w-full shadow-md hidden transform scale-y-0 transition-all duration-300 origin-top">
+        <ul class="flex flex-col items-center py-4 space-y-4 text-lg font-medium">
+            <li><a data-page="beranda" class="hover:text-blue-600 cursor-pointer">Beranda</a></li>
+            <li><a data-page="kategori" class="hover:text-blue-600 cursor-pointer">Katalog Buku</a></li>
+            <li><a data-page="tentang" class="hover:text-blue-600 cursor-pointer">Riwayat Buku</a></li>
+            <li><a data-page="kontak" class="hover:text-blue-600 cursor-pointer">Total Buku</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen" > </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-10 p-8 rounded-t-2xl shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+
+            <div>
+                <h3 class="font-bold text-lg mb-2">PustakaNusa</h3>
+                <p class="text-gray-300 text-sm">
+                    Berita terpercaya dan up-to-date untuk Anda.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-bold mb-2">About</h3>
+                <p class="text-gray-300">Politik</p>
+                <p class="text-gray-300">Olahraga</p>
+                <p class="text-gray-300">Teknologi</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold mb-2">Contact</h3>
+                <p class="text-gray-300">About</p>
+                <p class="text-gray-300">Hiburan</p>
+                <p class="text-gray-300">Lainnya</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold mb-2">Social Media</h3>
+
+                <div class="flex items-center gap-2 text-gray-300">
+                    <span class="iconify w-5 h-5" data-icon="ri:facebook-fill"></span>
+                    <p>PustakaNusa</p>
+                </div>
+
+                <div class="flex items-center gap-2 text-gray-300">
+                    <span class="iconify w-5 h-5" data-icon="ri:instagram-fill"></span>
+                    <p>PustakaNusa</p>
+                </div>
+
+                <div class="flex items-center gap-2 text-gray-300">
+                    <span class="iconify w-5 h-5" data-icon="ri:youtube-fill"></span>
+                    <p>PustakaNusa Official</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="text-gray-400 text-xs mt-6 border-t border-white/10 pt-4">
+            Copyright © 2025 • PustakaNusa.com
+        </p>
+    </footer>
+
+    <!-- Module -->
+    <script defer type="module" src="scripts/toggle.js"></script>
+    <!-- <script defer type="module" src="scripts/pages.js"></script>
+    <script defer type="module" src="scripts/data/category.js"></script>
+    <script defer type="module" src="scripts/components/cards/category.js"></script>
+    <script defer type="module" src="scripts/components/menus/typeCategory.js"></script> -->
+</body>
+
+</html>
