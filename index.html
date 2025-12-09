@@ -36,13 +36,15 @@
     <!-- Module -->
     <script type="module">
         import renderHeader from "./scripts/sections/header.js";
-        import renderBeranda from "./scripts/sections/beranda.js";
         import renderFooter from "./scripts/sections/footer.js";
+        import initRouter from "./scripts/router.js";
 
         renderHeader();
-        await renderBeranda();
         renderFooter();
+
+        initRouter();
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
