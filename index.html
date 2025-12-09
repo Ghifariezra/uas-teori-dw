@@ -17,6 +17,64 @@
     <!-- Header -->
     <header id="header" class="flex justify-between items-center p-8 bg-white shadow-md relative z-20"></header>
 
+    <!-- Search Mobile -->
+
+        <div class="flex items-center gap-4 sm:hidden">
+
+            <div id="search-icon-mobile" class="block cursor-pointer">
+                <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                </svg>
+            </div>
+
+            <div id="menu-toggle" class="cursor-pointer">
+                <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+    </header>
+
+    <nav id="mobile-nav"
+        class="sm:hidden bg-white w-full shadow-md hidden transform scale-y-0 transition-all duration-300 origin-top">
+        <ul class="flex flex-col items-center py-4 space-y-4 text-lg font-medium">
+            <li><a data-page="beranda" class="cursor-pointer">Beranda</a></li>
+            <li><a data-page="kategori" class="cursor-pointer">Kategori</a></li>
+        </ul>
+    </nav>
+
+    <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen">
+    </section>
+
+    <section id="search-view" class="p-8 hidden min-h-screen">
+        <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Pencarian</h2>
+
+            <div class="relative mb-8">
+                <input type="text" id="search-input"
+                    class="w-full p-4 pl-4 pr-16 text-lg border-2 border-gray-200 rounded-full 
+                           focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                    placeholder="Cari buku...">
+                <button type="button"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-4 rounded-lg shadow bg-white border">
+                    <p class="text-gray-700 text-sm">Belum ada pencarian.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Navigation Mobile -->
     <nav id="mobile-nav"
         class="sm:hidden bg-white w-full shadow-md hidden transform scale-y-0 transition-all duration-300 origin-top">
@@ -131,8 +189,12 @@
 // Hapus import initSearchToggle dari sini
 // import { initSearchToggle } from "./scripts/search-handler.js"; 
 
+<<<<<<< HEAD
         renderHeader();
         await renderBeranda();
+=======
+        await renderHeader();
+>>>>>>> 5e9c85f (add: fitur search)
         renderFooter();
     </script>
     </script>
