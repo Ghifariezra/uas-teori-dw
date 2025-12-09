@@ -10,6 +10,7 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body class="min-h-screen bg-gray-100">
@@ -26,7 +27,7 @@
     </nav>
 
     <!-- Content -->
-    <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen"> </section>
+    <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen"></section>
 
     <!-- Footer -->
     <footer id="footer" class="bg-blue-900 text-white mt-10 p-10 rounded-t-2xl shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
@@ -35,11 +36,14 @@
     <!-- Module -->
     <script type="module">
         import renderHeader from "./scripts/sections/header.js";
+        import renderBeranda from "./scripts/sections/beranda.js";
         import renderFooter from "./scripts/sections/footer.js";
 
         renderHeader();
+        await renderBeranda();
         renderFooter();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
 </html>
