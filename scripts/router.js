@@ -1,45 +1,40 @@
 import renderBeranda from "./sections/beranda.js";
 import renderKategori from "./sections/kategori.js";
-import { closeSearchView } from "./sections/search.js";
+import Loader from "./utils/load.js";
 
 export default function initRouter() {
     const content = document.getElementById("content");
+    const loader = new Loader();
 
     const routes = {
         beranda: renderBeranda,
         kategori: renderKategori
     };
 
-    async function loadPage(page = "beranda") {
-        closeSearchView();
-        
-        content.style.opacity = 0;
+    const validPaths = [
+        "/",
+        "/uas-teori-dw/",
+    ];
 
-        setTimeout(async () => {
-            if (routes[page]) {
-                await routes[page](); // Render halaman
-            } else {
-                content.innerHTML = "<h2>Halaman tidak ditemukan.</h2>";
-            }
+    if (!validPaths.includes(location.pathname)) {
+        loader.loadNotFound(content);
+        return;
+    }
 
-            if (typeof initFlowbite === "function") {
-                initFlowbite();
-            }
+    const initial = location.hash.replace("#", "") || "beranda";
 
-            content.style.opacity = 1;
-        }, 200);
+    if (initial && routes[initial]) {
+        loader.loadPage(initial, content, routes);
+    } else {
+        loader.loadNotFound(content);
     }
 
     document.addEventListener("click", (e) => {
         const page = e.target.dataset.page;
 
         if (page) {
-            loadPage(page);
+            loader.loadPage(page, content, routes);
             history.pushState({ page }, "", `#${page}`);
         }
     });
-
-    // load awal
-    const initial = location.hash.replace("#", "") || "beranda";
-    loadPage(initial);
 }
