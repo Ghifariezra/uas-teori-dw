@@ -1,5 +1,4 @@
-export async function loadComponents(path){
-    const rest = await fetch(`components/${path}`);
-    const html = await rest.text();
-    return html;
+export async function loadComponents(path) {
+    const res = await fetch(`/components/${path}`);
+    return await res.text();
 }
