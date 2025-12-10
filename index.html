@@ -10,7 +10,7 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </head>
 
 <body class="min-h-screen bg-gray-100">
@@ -29,24 +29,6 @@
     <!-- Content -->
     <section id="content" class="p-8 transition-opacity duration-300 opacity-100 min-h-screen"></section>
 
-    <!-- Search Desktop -->
-    <div class="flex items-center gap-4 sm:hidden w-5 h-5">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" />
-        </svg>
-    </div>
-    </div>
-
-    </header>
-
-    <!-- Navigation Mobile -->
-    <nav id="mobile-nav"
-        class="sm:hidden bg-white w-full shadow-md hidden transform scale-y-0 transition-all duration-300 origin-top">
-        <ul class="flex flex-col items-center py-4 space-y-4 text-lg font-medium">
-            <li><a data-page="beranda" class="cursor-pointer">Beranda</a></li>
-            <li><a data-page="kategori" class="cursor-pointer">Kategori</a></li>
-        </ul>
-    </nav>
-
     <!-- Search View -->
     <section id="search-view" class="p-8 hidden min-h-screen">
         <div class="w-full p-6 bg-white rounded-lg shadow-xl">
@@ -58,7 +40,7 @@
                        focus:ring-blue-500 focus:border-blue-500 bg-gray-50" placeholder="Cari buku...">
 
                 <button type="button"
-                    class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700">
+                    class="absolute top-3 right-5 transform p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
                             d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
@@ -81,11 +63,11 @@
 
     <!-- Module -->
     <script>
-        if (location.hostname.includes("github.io")) {
-            document.write(`<base href="/uas-teori-dw/">`)
-        } else {
-            document.write(`<base href="/">`)
-        }
+        document.write(
+            location.hostname.includes("github.io")
+                ? `<base href="/uas-teori-dw/">`
+                : `<base href="/">`
+        );
     </script>
 
     <script type="module">
@@ -98,7 +80,6 @@
         initRouter();
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
 </html>

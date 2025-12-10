@@ -19,6 +19,10 @@ export default function initRouter() {
                 content.innerHTML = "<h2>Halaman tidak ditemukan.</h2>";
             }
 
+            if (typeof initFlowbite === "function") {
+                initFlowbite();
+            }
+
             content.style.opacity = 1;
         }, 200);
     }
