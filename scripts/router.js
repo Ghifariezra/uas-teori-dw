@@ -1,5 +1,6 @@
 import renderBeranda from "./sections/beranda.js";
 import renderKategori from "./sections/kategori.js";
+import { closeSearchView } from "./sections/search.js";
 
 export default function initRouter() {
     const content = document.getElementById("content");
@@ -10,6 +11,8 @@ export default function initRouter() {
     };
 
     async function loadPage(page = "beranda") {
+        closeSearchView();
+        
         content.style.opacity = 0;
 
         setTimeout(async () => {

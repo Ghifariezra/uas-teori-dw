@@ -100,3 +100,15 @@ export function initSearchInput() {
     });
   });
 }
+
+export function closeSearchView() {
+  const searchView = document.getElementById("search-view");
+  const content = document.getElementById("content");
+  const footer = document.getElementById("footer");
+
+  if (!searchView || !content || !footer) return;
+
+  searchView.classList.add("hidden");
+  content.classList.remove("hidden");
+  footer.classList.remove("hidden");
+}
