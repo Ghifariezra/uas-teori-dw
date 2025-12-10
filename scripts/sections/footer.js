@@ -5,4 +5,9 @@ export default async function renderFooter() {
     if (!footerEl) return;
     
     footerEl.innerHTML = await loadComponents("footer.html");
+
+    const res = await fetch("/components/footer.html");
+    const html = await res.text();
+
+    footerEl.innerHTML = html;
 }

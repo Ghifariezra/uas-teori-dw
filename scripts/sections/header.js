@@ -8,7 +8,7 @@ export default async function renderHeader() {
     const res = await fetch("/components/header.html");
     const html = await res.text();
     headerEl.innerHTML = html;
-    
+
     initToggleMenu();
     initSearchToggle();
     initSearchInput();
