@@ -62,7 +62,7 @@ export function initSearchInput() {
 
     if (!query) {
       results.innerHTML = `
-                <div class="p-4 rounded-lg shadow bg-white border">
+                <div class="p-4 rounded-lg shadow bg-white border col-span-2">
                     <p class="text-gray-700 text-sm">Belum ada pencarian.</p>
                 </div>
             `;
@@ -75,7 +75,7 @@ export function initSearchInput() {
 
     if (filtered.length === 0) {
       results.innerHTML = `
-                <div class="p-4 rounded-lg shadow bg-white border">
+                <div class="p-4 rounded-lg shadow bg-white border col-span-2">
                     <p class="text-gray-700 text-sm">Tidak ada hasil untuk "<b>${query}</b>".</p>
                 </div>
             `;
