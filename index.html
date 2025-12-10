@@ -34,6 +34,14 @@
     </footer>
 
     <!-- Module -->
+    <script>
+        if (location.hostname.includes("github.io")) {
+            document.write(`<base href="/uas-teori-dw/">`)
+        } else {
+            document.write(`<base href="/">`)
+        }
+    </script>
+
     <script type="module">
         import renderHeader from "./scripts/sections/header.js";
         import renderFooter from "./scripts/sections/footer.js";
@@ -43,7 +51,6 @@
         renderFooter();
         initRouter();
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
