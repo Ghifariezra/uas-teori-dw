@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <!-- Categories Section -->
   <div class="mb-8">
     <h1 class="text-2xl font-semibold text-gray-800 mb-2">Pilih Kategori</h1>
@@ -8,37 +8,10 @@
   </div>
 
   <!-- GRID KATEGORI -->
-  <div class="grid sm:grid-cols-1 md:grid-cols-5 gap-4 mb-16">
-    <!-- Romance -->
-    <div class="cursor-pointer bg-white shadow rounded-xl p-6 text-center">
-      <div class="text-4xl mb-3">❤</div>
-      <div class="font-semibold text-gray-800">Romance</div>
-    </div>
-
-    <!-- Horror -->
-    <div class="cursor-pointer bg-white shadow rounded-xl p-6 text-center">
-      <div class="text-4xl mb-3">👻</div>
-      <div class="font-semibold text-gray-800">Horror</div>
-    </div>
-
-    <!-- Comedy -->
-    <div class="cursor-pointer bg-white shadow rounded-xl p-6 text-center">
-      <div class="text-4xl mb-3">😂</div>
-      <div class="font-semibold text-gray-800">Comedy</div>
-    </div>
-
-    <!-- Action -->
-    <div class="cursor-pointer bg-white shadow rounded-xl p-6 text-center">
-      <div class="text-4xl mb-3">⚔️</div>
-      <div class="font-semibold text-gray-800">Action</div>
-    </div>
-
-    <!-- Fiksi -->
-    <div class="cursor-pointer bg-white shadow rounded-xl p-6 text-center">
-      <div class="text-4xl mb-3">📘</div>
-      <div class="font-semibold text-gray-800">Fiksi</div>
-    </div>
-  </div>
+  <div
+    id="cards-category"
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16"
+  ></div>
 
   <!-- Books Recommendation Section -->
   <div class="mt-12">
@@ -51,78 +24,9 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- BUKU 1 -->
-      <div
-        class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer"
-      >
-        <div class="h-64 w-full flex items-center justify-center text-5xl">
-          💕
-        </div>
-        <div class="p-4">
-          <div class="text-base font-semibold text-gray-800 mb-1">
-            Hujan Bulan Juni
-          </div>
-          <div class="text-xs text-gray-600 mb-2">Sapardi Djoko Damono</div>
-          <span
-            class="inline-block bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full text-xs font-medium mb-2"
-            >Romance</span
-          >
-          <button
-            class="w-full py-2 bg-blue-500 text-white rounded-md text-xs font-medium hover:bg-blue-600 transition"
-          >
-            Baca Selengkapnya...
-          </button>
-        </div>
-      </div>
-
-      <!-- BUKU 2 -->
-      <div
-        class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer"
-      >
-        <div class="h-64 w-full flex items-center justify-center text-5xl">
-          👻
-        </div>
-        <div class="p-4">
-          <div class="text-base font-semibold text-gray-800 mb-1">
-            Misteri Rumah Tua
-          </div>
-          <div class="text-xs text-gray-600 mb-2">Risa Saraswati</div>
-          <span
-            class="inline-block bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full text-xs font-medium mb-2"
-            >Horror</span
-          >
-          <button
-            class="w-full py-2 bg-blue-500 text-white rounded-md text-xs font-medium hover:bg-blue-600 transition"
-          >
-            Baca Selengkapnya...
-          </button>
-        </div>
-      </div>
-
-      <!-- BUKU 3 -->
-      <div
-        class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer"
-      >
-        <div class="h-64 w-full flex items-center justify-center text-5xl">
-          😂
-        </div>
-        <div class="p-4">
-          <div class="text-base font-semibold text-gray-800 mb-1">
-            Kambing Jantan
-          </div>
-          <div class="text-xs text-gray-600 mb-2">Raditya Dika</div>
-          <span
-            class="inline-block bg-blue-50 text-blue-500 px-2 py-0.5 rounded-full text-xs font-medium mb-2"
-            >Comedy</span
-          >
-          <button
-            class="w-full py-2 bg-blue-500 text-white rounded-md text-xs font-medium hover:bg-blue-600 transition"
-          >
-            Baca Selengkapnya...
-          </button>
-        </div>
-      </div>
-    </div>
+    <div
+      id="cards-recommendation"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    ></div>
   </div>
 </div>
