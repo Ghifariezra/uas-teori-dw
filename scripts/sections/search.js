@@ -3,7 +3,6 @@ import bukuData from "../data/bukuData.js";
 let cacheBuku = [];
 let isLoaded = false;
 
-/* ================= SEARCH TOGGLE ================= */
 export function initSearchToggle() {
   const searchIconDesktop = document.getElementById("search-icon-desktop");
   const searchIconMobile = document.getElementById("search-icon-mobile");
@@ -30,14 +29,12 @@ export function initSearchToggle() {
   searchIconMobile?.addEventListener("click", toggleView);
 }
 
-/* ================= SEARCH INPUT ================= */
 export function initSearchInput() {
   const input = document.getElementById("search-input");
   const results = document.getElementById("search-results");
 
   if (!input || !results) return;
 
-  // Load data sekali (cache)
   if (!isLoaded) {
     bukuData({ sort: "popular", page: 1 })
       .then((data) => {
@@ -63,7 +60,6 @@ export function initSearchInput() {
       return;
     }
 
-    // SEARCH AWALAN JUDUL SAJA
     const filtered = cacheBuku.filter((item) =>
       item.title.toLowerCase().startsWith(query)
     );
@@ -82,11 +78,10 @@ export function initSearchInput() {
   });
 }
 
-/* ================= CARD ================= */
 function createSearchCard(item) {
   const cover =
     item.formats?.["image/jpeg"] ||
-    "https://via.placeholder.com/150?text=No+Cover";
+    "https://via.placeholder.com/300x450?text=No+Cover";
 
   const author = item.authors?.[0]?.name || "Unknown Author";
   const genre = item.bookshelves?.[0] || "Unknown Genre";
@@ -95,37 +90,51 @@ function createSearchCard(item) {
 
   const card = document.createElement("div");
   card.className =
-  "bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden flex flex-col w-full";
+    "bg-white rounded-xl shadow-md hover:shadow-lg transition w-full " +
+    "flex flex-row sm:flex-col overflow-hidden p-2 sm:p-4";
 
   card.innerHTML = `
     <!-- COVER -->
-    <div class="relative w-28 h-40 sm:w-full sm:h-56 flex-shrink-0 overflow-hidden">
-      <div
-        class="absolute inset-0 bg-center bg-cover scale-105 blur-[1px] opacity-20"
-        style="background-image: url('${cover}')">
-      </div>
-      <div class="absolute inset-0 bg-white/45"></div>
+    <div class="w-28 sm:w-full flex-shrink-0 flex items-stretch sm:block">
+
+      <!-- MOBILE -->
       <img
         src="${cover}"
         alt="${item.title}"
-        class="relative z-10 object-contain w-full h-full">
+        class="block sm:hidden w-full h-full object-contain rounded-md">
+
+      <!-- DESKTOP & TABLET -->
+      <div class="hidden sm:block relative w-full h-56 rounded-lg overflow-hidden p-3 bg-white/30">
+        <img
+          src="${cover}"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-70">
+
+        <img
+          src="${cover}"
+          alt="${item.title}"
+          class="relative z-10 w-full h-full object-contain rounded-md">
+      </div>
     </div>
 
-    <div class="p-3 sm:p-4 flex flex-col flex-grow">
-      <h3 class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-1">
-        ${item.title}
-      </h3>
+    <!-- CONTENT -->
+    <div class="px-3 py-2 sm:p-0 sm:mt-3 flex flex-col justify-between gap-1 flex-1">
+      <div>
+        <h3 class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-2">
+          ${item.title}
+        </h3>
 
-      <p class="text-xs text-gray-600 mt-1 truncate">
-        ${author}
-      </p>
+        <p class="text-xs text-gray-600 mt-1 truncate">
+          ${author}
+        </p>
 
-      <span class="mt-2 w-fit bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full
-                   text-[10px] sm:text-xs font-medium truncate">
-        ${genre}
-      </span>
+        <span class="inline-block mt-2 bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full
+                     text-[10px] sm:text-xs font-medium truncate">
+          ${genre}
+        </span>
+      </div>
 
-      <div class="flex items-center justify-between mt-3">
+      <div class="mt-2 flex items-center justify-between">
         <span class="text-[10px] sm:text-xs text-gray-500">
           Total Download
         </span>
@@ -137,7 +146,7 @@ function createSearchCard(item) {
       </div>
 
       <a href="${bacaUrl}" target="_blank"
-         class="mt-3 w-full py-1.5 sm:py-2 bg-blue-500 text-white rounded-md
+         class="mt-2 w-full py-2 bg-blue-500 text-white rounded-md
                 text-[11px] sm:text-xs font-medium hover:bg-blue-600 transition text-center">
         Baca Selengkapnya
       </a>
@@ -147,7 +156,7 @@ function createSearchCard(item) {
   return card;
 }
 
-/* ================= UI HELPERS ================= */
+
 function emptyState(text) {
   return `
     <p class="col-span-full text-center text-gray-400 text-sm">
@@ -156,7 +165,6 @@ function emptyState(text) {
   `;
 }
 
-/* 🔧 FIX UTAMA ADA DI SINI */
 function renderTotal(container, total) {
   const div = document.createElement("div");
   div.className = "mb-3 font-semibold text-gray-800 col-span-full";
@@ -164,7 +172,6 @@ function renderTotal(container, total) {
   container.appendChild(div);
 }
 
-/* ================= CLOSE SEARCH ================= */
 export function closeSearchView() {
   const searchView = document.getElementById("search-view");
   const content = document.getElementById("content");
