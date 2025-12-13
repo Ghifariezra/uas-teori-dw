@@ -63,7 +63,7 @@ export function initSearchInput() {
       return;
     }
 
-    // SEARCH AWALAN JUDUL SAJA
+    // SEARCH AWALAN JUDUL
     const filtered = cacheBuku.filter((item) =>
       item.title.toLowerCase().startsWith(query)
     );
@@ -82,7 +82,7 @@ export function initSearchInput() {
   });
 }
 
-/* ================= CARD ================= */
+/* ================= CARD (MOBILE FIXED + DESKTOP 3 COL) ================= */
 function createSearchCard(item) {
   const cover =
     item.formats?.["image/jpeg"] ||
@@ -95,50 +95,51 @@ function createSearchCard(item) {
 
   const card = document.createElement("div");
   card.className =
-  "bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden flex flex-col w-full";
+    "bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden flex flex-col w-full";
 
   card.innerHTML = `
     <!-- COVER -->
-    <div class="relative w-28 h-40 sm:w-full sm:h-56 flex-shrink-0 overflow-hidden">
+    <div class="relative w-full h-44 sm:h-56 overflow-hidden">
+      <!-- subtle blur background -->
       <div
         class="absolute inset-0 bg-center bg-cover scale-105 blur-[1px] opacity-20"
         style="background-image: url('${cover}')">
       </div>
+
       <div class="absolute inset-0 bg-white/45"></div>
+
       <img
         src="${cover}"
         alt="${item.title}"
         class="relative z-10 object-contain w-full h-full">
     </div>
 
-    <div class="p-3 sm:p-4 flex flex-col flex-grow">
-      <h3 class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-1">
+    <!-- CONTENT -->
+    <div class="p-3 sm:p-4 flex flex-col gap-2">
+      <h3 class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-2">
         ${item.title}
       </h3>
 
-      <p class="text-xs text-gray-600 mt-1 truncate">
+      <p class="text-xs text-gray-600 truncate">
         ${author}
       </p>
 
-      <span class="mt-2 w-fit bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full
+      <span class="w-fit bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full
                    text-[10px] sm:text-xs font-medium truncate">
         ${genre}
       </span>
 
-      <div class="flex items-center justify-between mt-3">
-        <span class="text-[10px] sm:text-xs text-gray-500">
-          Total Download
-        </span>
-
+      <div class="flex items-center justify-between text-xs text-gray-500 mt-1">
+        <span>Total Download</span>
         <span class="inline-flex items-center gap-1 bg-green-50 text-green-600
-                     px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold">
+                     px-2 py-0.5 rounded-full font-semibold">
           ⬇ ${downloadCount.toLocaleString()}
         </span>
       </div>
 
       <a href="${bacaUrl}" target="_blank"
-         class="mt-3 w-full py-1.5 sm:py-2 bg-blue-500 text-white rounded-md
-                text-[11px] sm:text-xs font-medium hover:bg-blue-600 transition text-center">
+         class="mt-2 w-full py-2 bg-blue-500 text-white rounded-md
+                text-xs font-medium hover:bg-blue-600 transition text-center">
         Baca Selengkapnya
       </a>
     </div>
@@ -156,7 +157,6 @@ function emptyState(text) {
   `;
 }
 
-/* 🔧 FIX UTAMA ADA DI SINI */
 function renderTotal(container, total) {
   const div = document.createElement("div");
   div.className = "mb-3 font-semibold text-gray-800 col-span-full";
