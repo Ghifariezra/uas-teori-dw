@@ -3,6 +3,7 @@ import bukuData from "../data/bukuData.js";
 let cacheBuku = [];
 let isLoaded = false;
 
+/* ================= SEARCH TOGGLE ================= */
 export function initSearchToggle() {
   const searchIconDesktop = document.getElementById("search-icon-desktop");
   const searchIconMobile = document.getElementById("search-icon-mobile");
@@ -29,12 +30,14 @@ export function initSearchToggle() {
   searchIconMobile?.addEventListener("click", toggleView);
 }
 
+/* ================= SEARCH INPUT ================= */
 export function initSearchInput() {
   const input = document.getElementById("search-input");
   const results = document.getElementById("search-results");
 
   if (!input || !results) return;
 
+  // Load data sekali (cache)
   if (!isLoaded) {
     bukuData({ sort: "popular", page: 1 })
       .then((data) => {
@@ -60,6 +63,7 @@ export function initSearchInput() {
       return;
     }
 
+    // SEARCH AWALAN JUDUL SAJA
     const filtered = cacheBuku.filter((item) =>
       item.title.toLowerCase().startsWith(query)
     );
@@ -78,6 +82,7 @@ export function initSearchInput() {
   });
 }
 
+/* ================= CARD ================= */
 function createSearchCard(item) {
   const cover =
     item.formats?.["image/jpeg"] ||
@@ -90,7 +95,7 @@ function createSearchCard(item) {
 
   const card = document.createElement("div");
   card.className =
-    "bg-white rounded-lg shadow-md hover:shadow-xl transition cursor-pointer overflow-hidden flex flex-row sm:flex-col w-full";
+  "bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden flex flex-col w-full";
 
   card.innerHTML = `
     <!-- COVER -->
@@ -142,6 +147,7 @@ function createSearchCard(item) {
   return card;
 }
 
+/* ================= UI HELPERS ================= */
 function emptyState(text) {
   return `
     <p class="col-span-full text-center text-gray-400 text-sm">
@@ -150,6 +156,7 @@ function emptyState(text) {
   `;
 }
 
+/* 🔧 FIX UTAMA ADA DI SINI */
 function renderTotal(container, total) {
   const div = document.createElement("div");
   div.className = "mb-3 font-semibold text-gray-800 col-span-full";
@@ -157,6 +164,7 @@ function renderTotal(container, total) {
   container.appendChild(div);
 }
 
+/* ================= CLOSE SEARCH ================= */
 export function closeSearchView() {
   const searchView = document.getElementById("search-view");
   const content = document.getElementById("content");
