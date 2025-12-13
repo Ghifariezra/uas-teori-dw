@@ -37,7 +37,7 @@
             <!-- Input -->
             <div class="relative mb-8">
                 <input type="text" id="search-input" class="w-full p-4 pl-4 pr-16 text-lg border-2 border-gray-200 rounded-full
-                       focus:ring-blue-500 focus:border-blue-500 bg-gray-50" placeholder="Cari buku...">
+                focus:ring-blue-300 focus:border-blue-300 bg-gray-50 transition-all duration-200 outline-none" placeholder="Cari buku...">
 
                 <button type="button"
                     class="absolute top-3 right-5 transform p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700">
@@ -50,9 +50,9 @@
 
             <!-- Placeholder result -->
             <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-4 rounded-lg shadow bg-white border col-span-2">
-                    <p class="text-gray-700 text-sm">Belum ada pencarian.</p>
-                </div>
+                <p class="col-span-2 text-center text-gray-400 text-sm">
+                    Belum ada pencarian
+                </p>
             </div>
         </div>
     </section>
