@@ -32,6 +32,12 @@ export default class Loader {
         }, 200);
     }
 
+    async loadCards(container, data, callback) {
+        if (!container) return;
+        container.innerHTML = data.map(item => callback(item)).join("");
+    }
+
+
     async loadNotFound(content) {
         const html = await this.loadComponents("notFound.html");
         content.innerHTML = html;

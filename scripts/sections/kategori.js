@@ -13,16 +13,16 @@ export default async function renderKategori() {
 
     const cardsCategory = document.getElementById("cards-category");
     const cardsRecommendation = document.getElementById("cards-recommendation");
+    
+    await loader.loadCards(
+        cardsCategory,
+        kategoriData,
+        daftarKategori
+    );
 
-    if (cardsCategory) {
-        cardsCategory.innerHTML = kategoriData
-            .map(item => daftarKategori(item.icon, item.title))
-            .join("");
-    }
-
-    if (cardsRecommendation) {
-        cardsRecommendation.innerHTML = rekomendasiData
-            .map(item => daftarRekomendasi(item.icon, item.title, item.author, item.category))
-            .join("");
-    }
+    await loader.loadCards(
+        cardsRecommendation,
+        rekomendasiData,
+        daftarRekomendasi
+    );
 }

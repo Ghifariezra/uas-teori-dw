@@ -1,27 +1,7 @@
-<div class="flex flex-col w-full h-full">
+<div class="flex flex-col gap-12 w-full h-full">
+    <!-- Carousel -->
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
-        <div class="relative h-screen overflow-hidden rounded-2xl shadow-lg">
-            <!-- Item 1 (aktif) -->
-            <div class="duration-700 ease-out" data-carousel-item="active">
-                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80"
-                    class="absolute block w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/40"></div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-out" data-carousel-item>
-                <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=1000&auto=format&fit=crop&q=80"
-                    class="absolute block w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/40"></div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-out" data-carousel-item>
-                <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=500&auto=format&fit=crop&q=60"
-                    class="absolute block w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/40"></div>
-            </div>
-        </div>
+        <div id="list-carousel" class="relative h-56 sm:h-64 md:h-80 overflow-hidden rounded-2xl"></div>
 
         <!-- Indicators -->
         <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-2">
@@ -33,7 +13,8 @@
         <!-- Controls -->
         <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4"
             data-carousel-prev>
-            <span class="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur">
+            <span
+                class="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur">
                 <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -42,11 +23,28 @@
 
         <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4"
             data-carousel-next>
-            <span class="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur">
+            <span
+                class="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur">
                 <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
             </span>
         </button>
+    </div>
+
+    <!-- Popular -->
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-0">
+            <h1 class="text-2xl font-semibold text-gray-800 mb-2">
+                Buku Terpopuler
+            </h1>
+            <p class="text-sm text-gray-600">
+                Koleksi buku paling populer dengan jumlah unduhan terbanyak, dipilih langsung dari berbagai kategori favorit pembaca.
+            </p>
+        </div>
+        <div
+            id="container-popular"
+            class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+        ></div>
     </div>
 </div>
