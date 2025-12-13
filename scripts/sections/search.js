@@ -60,10 +60,8 @@ export function initSearchInput() {
       return;
     }
 
-    const filtered = cacheBuku.filter(
-      (item) =>
-        item.title.toLowerCase().includes(query) ||
-        item.authors?.[0]?.name?.toLowerCase().includes(query)
+    const filtered = cacheBuku.filter((item) =>
+      item.title.toLowerCase().startsWith(query)
     );
 
     if (filtered.length === 0) {
@@ -80,7 +78,6 @@ export function initSearchInput() {
   });
 }
 
-
 function createSearchCard(item) {
   const cover =
     item.formats?.["image/jpeg"] ||
@@ -93,11 +90,20 @@ function createSearchCard(item) {
 
   const card = document.createElement("div");
   card.className =
-    "bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden flex flex-row sm:flex-col w-full";
+    "bg-white rounded-lg shadow-md hover:shadow-xl transition cursor-pointer overflow-hidden flex flex-row sm:flex-col w-full";
 
   card.innerHTML = `
-    <div class="w-28 h-40 sm:w-full sm:h-56 flex-shrink-0 overflow-hidden">
-      <img src="${cover}" class="object-cover w-full h-full">
+    <!-- COVER -->
+    <div class="relative w-28 h-40 sm:w-full sm:h-56 flex-shrink-0 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-center bg-cover scale-105 blur-[1px] opacity-20"
+        style="background-image: url('${cover}')">
+      </div>
+      <div class="absolute inset-0 bg-white/45"></div>
+      <img
+        src="${cover}"
+        alt="${item.title}"
+        class="relative z-10 object-contain w-full h-full">
     </div>
 
     <div class="p-3 sm:p-4 flex flex-col flex-grow">
@@ -138,7 +144,7 @@ function createSearchCard(item) {
 
 function emptyState(text) {
   return `
-    <p class="col-span-2 text-center text-gray-400 text-sm">
+    <p class="col-span-full text-center text-gray-400 text-sm">
       ${text}
     </p>
   `;
@@ -146,7 +152,7 @@ function emptyState(text) {
 
 function renderTotal(container, total) {
   const div = document.createElement("div");
-  div.className = "mb-3 font-semibold text-gray-800 col-span-2";
+  div.className = "mb-3 font-semibold text-gray-800 col-span-full";
   div.textContent = `Total buku ditemukan: ${total}`;
   container.appendChild(div);
 }
