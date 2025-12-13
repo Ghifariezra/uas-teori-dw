@@ -25,7 +25,7 @@ export default function daftarPopuler(item) {
       <!-- CONTENT -->
       <div class="p-3 sm:p-4 flex flex-col flex-grow">
         <h3
-          class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-2"
+          class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-1"
           title="${item.title}"
         >
           ${item.title}
