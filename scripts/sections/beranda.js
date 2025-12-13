@@ -20,14 +20,16 @@ export default async function renderBeranda() {
     );
 
     const containerPopuler = document.getElementById("container-popular");
-    const semuaBuku = await bukuData();
+    const semuaBuku = await bukuData({
+        sort: "popular",
+        page: 1
+    });
 
     if (semuaBuku) {
         await loader.loadCards(
             containerPopuler,
-            semuaBuku.slice(0,5),
+            semuaBuku.slice(0, 5),
             daftarPopuler
         );
     }
-
 }

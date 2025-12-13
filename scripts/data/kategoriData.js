@@ -1,23 +1,28 @@
 const kategoriData = [
     {
-        icon: "❤",
-        title: "Romance"
+        icon: "📜",
+        title: "British Literature",
+        subject: "British"
     },
     {
-        icon: "👻",
-        title: "Horror"
+        icon: "🏛️",
+        title: "Classics of Literature",
+        subject: "Classical literature"
     },
     {
         icon: "😂",
-        title: "Comedy"
+        title: "Novels",
+        subject: "Fiction"
     },
     {
         icon: "⚔️",
-        title: "Action"
+        title: "Science-Fiction & Fantasy",
+        subject: "Science fiction"
     },
     {
         icon: "📘",
-        title: "Fiksi"
+        title: "Gothic Fiction",
+        subject: "Gothic fiction"
     }
 ];
 

@@ -1,14 +1,24 @@
-export default async function bukuData() {
-  try {
-    const response = await fetch('https://gutendex.com/books?sort=popular&page=1');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+import { getCache, setCache, hasCache } from "./cache.js";
+
+export default async function bukuData(options = {}) {
+    const key = JSON.stringify(options);
+
+    if (hasCache(key)) {
+        return getCache(key);
     }
-    const data = await response.json();
-    console.log(data.results);
-    return data.results;
-  } catch (err) {
-    console.error('Fetch buku gagal:', err);
-    return null;
-  }
+
+    try {
+        const params = new URLSearchParams(options);
+        const response = await fetch(`https://gutendex.com/books?${params}`);
+
+        if (!response.ok) throw new Error(response.status);
+
+        const data = await response.json();
+        setCache(key, data.results);
+        return data.results;
+
+    } catch (err) {
+        console.error("Fetch buku gagal:", err);
+        return [];
+    }
 }
