@@ -64,7 +64,7 @@ export default function daftarPopuler(item) {
           href="${bacaUrl}"
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-3 sm:mt-auto w-full py-1.5 sm:py-2
+          class="mt-3 w-full py-1.5 sm:py-2
                  bg-blue-500 text-white rounded-md
                  text-[11px] sm:text-xs font-medium
                  hover:bg-blue-600 transition text-center"
