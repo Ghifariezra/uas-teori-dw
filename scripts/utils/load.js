@@ -37,7 +37,6 @@ export default class Loader {
         container.innerHTML = data.map(item => callback(item)).join("");
     }
 
-
     async loadNotFound(content) {
         const html = await this.loadComponents("notFound.html");
         content.innerHTML = html;

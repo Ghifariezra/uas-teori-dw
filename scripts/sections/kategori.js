@@ -36,6 +36,15 @@ export default async function renderKategori() {
 
         const subject = card.dataset.subject;
 
+        if (subject === "popular") {
+            await loader.loadCards(
+                booksCategory,
+                bukuPopuler,
+                daftarPopuler
+            );
+            return;
+        };
+
         const dataBukuPerKategori = await bukuData({
             topic: subject,
             sort: "ascending"

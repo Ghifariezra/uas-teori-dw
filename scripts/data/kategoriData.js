@@ -1,5 +1,10 @@
 const kategoriData = [
     {
+        icon: "🔥",
+        title: "Popular",
+        subject: "popular"
+    },
+    {
         icon: "📜",
         title: "British Literature",
         subject: "British Literature"
