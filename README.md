@@ -12,7 +12,7 @@ Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku ber
 - **Dheka Airlangga - 4524210027**
 - **Maghfiroh Lisabiliana - 4524210040**
 - **Ghifari Ezra Ramadhan - 4524210041**
-- **Naila Putri Fahel - 4524210051**
+- **Naila Putri Fahel - 4524210053**
 
 ---
 
