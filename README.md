@@ -3,20 +3,16 @@
 Website ini merupakan website perpustakaan berbasis web yang dibuat sebagai media informasi dan layanan perpustakaan secara digital. Website bertujuan untuk memudahkan pengguna dalam mengakses informasi koleksi buku tanpa harus datang langsung ke perpustakaan.
 
 Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku berdasarkan kategori tertentu, serta melakukan pencarian untuk menemukan buku yang diinginkan. Website dirancang dengan tampilan sederhana agar mudah digunakan dan dipahami oleh semua pengguna.
->>>>>>> Stashed changes
 
 ---
-
 ## Kelompok: 7
 
 ### Anggota:
-
-- **Naila Putri Fahel - 4524210051**
-- **Maghfiroh Lisabiliana - 4524210040**
-- **Dheka Airlangga - 4524210027**
 - **Az-Zahra Putri - 4524210018**
+- **Dheka Airlangga - 4524210027**
+- **Maghfiroh Lisabiliana - 4524210040**
 - **Ghifari Ezra Ramadhan - 4524210041**
->>>>>>> Stashed changes
+- **Naila Putri Fahel - 4524210051**
 
 ---
 
