@@ -4,6 +4,7 @@ export default function daftarPopuler(item) {
   const genre = item.bookshelves?.[0] || "Unknown Genre";
   const bacaUrl = item.formats["text/html"] || "#";
   const downloadCount = item.download_count;
+  const summary = item.summaries?.[0] || "Tidak ada ringkasan tersedia.";
 
   const formats = item.formats || {};
 
@@ -89,24 +90,58 @@ export default function daftarPopuler(item) {
           </span>
         </div>
 
-        <div class="mt-3 flex gap-2 flex-wrap">
-          ${downloadLinks.epub ? `
-            <a href="${downloadLinks.epub}" download
-              class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200">
-              EPUB
-            </a>` : ""}
+        <div class="mt-2 flex flex-col">
+          <span class="text-[10px] sm:text-xs text-gray-500">Download Format:</span>
 
-          ${downloadLinks.txt ? `
-            <a href="${downloadLinks.txt}" download
-              class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200">
-              TXT
-            </a>` : ""}
+          <div class="mt-3 flex gap-2 flex-col w-full sm:flex-row">
+            ${downloadLinks.epub ? `
+              <a href="${downloadLinks.epub}" download
+                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                EPUB
+              </a>` : ""}
 
-          ${downloadLinks.mobi ? `
-            <a href="${downloadLinks.mobi}" download
-              class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200">
-              MOBI
-            </a>` : ""}
+            ${downloadLinks.txt ? `
+              <a href="${downloadLinks.txt}" download
+                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                TXT
+              </a>` : ""}
+
+            ${downloadLinks.mobi ? `
+              <a href="${downloadLinks.mobi}" download
+                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                MOBI
+              </a>` : ""}
+          </div>
+        </div>
+
+        <div class>
+              <button
+                class="tts-btn mt-2 w-full py-1.5 sm:py-2
+                      bg-gray-100 text-gray-700 rounded-md
+                      text-[11px] sm:text-xs font-medium
+                      hover:bg-gray-200 transition cursor-pointer"
+                data-type="book"
+                data-title="${item.title}"
+                data-author="${author}"
+                data-genre="${genre}"
+                data-download="${downloadCount}"
+                data-formats="${Object.keys(downloadLinks)
+                    .filter(key => downloadLinks[key])
+                    .join(', ')}"
+              >
+                🔊 Dengarkan Ringkasan Buku
+              </button>
+
+              <button
+              class="tts-btn mt-2 w-full py-1.5 sm:py-2
+                    bg-gray-100 text-gray-700 rounded-md
+                    text-[11px] sm:text-xs font-medium
+                    hover:bg-gray-200 transition cursor-pointer"
+              data-type="summary"
+              data-summary="${encodeURIComponent(summary)}"
+            >
+              🔊 Dengarkan Ringkasan Cerita
+            </button>
         </div>
 
         <a

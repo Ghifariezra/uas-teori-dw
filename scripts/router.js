@@ -4,6 +4,7 @@ import Loader from "./utils/load.js";
 import bukuData from "./data/bukuData.js";
 import { kategoriData } from "./data/kategoriData.js";
 import { getBasePath } from "./utils/getBasePath.js";
+import { textToSpeech } from "./utils/textToSpeech.js";
 
 window.goHome = function () {
     window.location.href = getBasePath();
@@ -27,6 +28,8 @@ export default function initRouter() {
 
     const initial = location.hash.replace("#", "") || "beranda";
     loader.loadPage(initial, content, routes);
+
+    textToSpeech();
 
     // ===============================
     // 🔥 PREFETCH SAAT HOVER NAV
