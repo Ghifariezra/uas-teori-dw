@@ -1,8 +1,5 @@
 # TUGAS AKHIR DESIGN WEBISTE
-<<<<<<< Updated upstream
 
-Tentang apa ?
-=======
 Website ini merupakan website perpustakaan berbasis web yang dibuat sebagai media informasi dan layanan perpustakaan secara digital. Website bertujuan untuk memudahkan pengguna dalam mengakses informasi koleksi buku tanpa harus datang langsung ke perpustakaan.
 
 Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku berdasarkan kategori tertentu, serta melakukan pencarian untuk menemukan buku yang diinginkan. Website dirancang dengan tampilan sederhana agar mudah digunakan dan dipahami oleh semua pengguna.
@@ -13,14 +10,7 @@ Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku ber
 ## Kelompok: 7
 
 ### Anggota:
-<<<<<<< Updated upstream
 
--   **Naila Putri Fahel - 45xxxx**
--   **Maghfiroh - 45xxxx**
--   **Dheka - 45xxxx**
--   **Az-Zahra - 45xxxx**
--   **Ghifari Ezra Ramadhan - 4524210041**
-=======
 - **Naila Putri Fahel - 4524210051**
 - **Maghfiroh Lisabiliana - 4524210040**
 - **Dheka Airlangga - 4524210027**
@@ -39,12 +29,6 @@ Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku ber
 ---
 
 ## Fitur
-<<<<<<< Updated upstream
-
-### A
-
-Desc.........
-=======
 ### Beranda
 1. Halaman utama website perpustakaan.
 2. Menampilkan gambaran umum website dan menu navigasi utama.
@@ -55,11 +39,6 @@ Desc.........
 
 ### Pencarian Buku
 1. Digunakan untuk mencari buku berdasarkan kata kunci tertentu.
->>>>>>> Stashed changes
-
-### B
-
-Desc.........
 
 ---
 
@@ -69,19 +48,11 @@ Desc.........
 .
 │   index.html
 │   README.md
-<<<<<<< Updated upstream
-│
-├───assets
-│   ├───icons
-│   │       logo.ico
-│   │
-=======
 │   
 ├───assets
 │   ├───icons
 │   │       logo.ico
-│   │       
->>>>>>> Stashed changes
+│   │
 │   └───images
 │           logo.jpeg
 │
@@ -91,7 +62,6 @@ Desc.........
 │       header.html
 │       kategori.html
 │       notFound.html
-<<<<<<< Updated upstream
 │
 └───scripts
     │   router.js
@@ -100,16 +70,6 @@ Desc.........
     ├───components
     │   │   daftarPopuler.js
     │   │
-=======
-│       
-└───scripts
-    │   router.js
-    │   toggle.js
-    │   
-    ├───components
-    │   │   daftarPopuler.js
-    │   │   
->>>>>>> Stashed changes
     │   └───cards
     │           daftarCaraousel.js
     │           daftarKategori.js
@@ -131,8 +91,4 @@ Desc.........
     │
     └───utils
             load.js
-<<<<<<< Updated upstream
 ```
-=======
-```
->>>>>>> Stashed changes
