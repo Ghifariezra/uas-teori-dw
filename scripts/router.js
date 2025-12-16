@@ -3,7 +3,11 @@ import renderKategori from "./sections/kategori.js";
 import Loader from "./utils/load.js";
 import bukuData from "./data/bukuData.js";
 import { kategoriData } from "./data/kategoriData.js";
+import { getBasePath } from "./utils/getBasePath.js";
 
+window.goHome = function () {
+    window.location.href = getBasePath();
+};
 export default function initRouter() {
     const content = document.getElementById("content");
     const loader = new Loader();
