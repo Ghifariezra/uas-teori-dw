@@ -8,6 +8,7 @@ import { getBasePath } from "./utils/getBasePath.js";
 window.goHome = function () {
     window.location.href = getBasePath();
 };
+
 export default function initRouter() {
     const content = document.getElementById("content");
     const loader = new Loader();

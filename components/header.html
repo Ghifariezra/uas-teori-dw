@@ -11,20 +11,14 @@
 </button>
 
 <!-- Logo -->
-<a href="./index.html" class="flex items-center gap-3">
+<a href="./index.html" tabindex="1" class="flex items-center gap-3">
   <span class="block w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14">
-    <img
-      src="./assets/images/logoreadorium.png"
-      alt="logo Readorium"
-      class="w-full h-full object-cover rounded-xl"
-    />
+    <img src="./assets/images/logoreadorium.png" alt="logo Readorium" class="w-full h-full object-cover rounded-xl" />
   </span>
-  
+
   <!-- Text -->
-<span
-  class="hidden sm:block font-bold text-blue-700 tracking-wide
-         text-base sm:text-lg md:text-xl lg:text-4xl"
->
+  <span class="hidden sm:block font-bold text-blue-700 tracking-wide
+         text-base sm:text-lg md:text-xl lg:text-4xl">
     Readorium
   </span>
 </a>
@@ -41,10 +35,10 @@
 <nav class="hidden sm:block">
   <ul class="flex items-center space-x-6 text-base md:text-lg font-medium tracking-wide">
     <li>
-      <a data-page="beranda" class="px-1 hover:text-blue-600 cursor-pointer">Beranda</a>
+      <a tabindex="2" data-page="beranda" class="px-1 hover:text-blue-600 cursor-pointer">Beranda</a>
     </li>
     <li>
-      <a data-page="kategori" class="px-1 hover:text-blue-600 cursor-pointer">Kategori</a>
+      <a tabindex="3" data-page="kategori" class="px-1 hover:text-blue-600 cursor-pointer">Kategori</a>
     </li>
     <li>
       <svg id="search-icon-desktop" class="w-6 md:w-7 h-6 text-gray-800 hover:text-blue-600 cursor-pointer"

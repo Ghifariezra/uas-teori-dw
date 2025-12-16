@@ -16,7 +16,7 @@ export default function daftarPopuler(item) {
 
   return `
     <div
-      class="bg-white rounded-lg shadow-md hover:shadow-xl transition cursor-pointer flex flex-row sm:flex-col w-full"
+      class="bg-white rounded-lg shadow-md hover:shadow-xl transition flex flex-row sm:flex-col w-full"
     >
       <!-- COVER -->
       <div class="w-28 sm:w-full flex-shrink-0 flex items-stretch sm:block">
