@@ -1,18 +1,18 @@
 # TUGAS AKHIR DESIGN WEBISTE
 
-Tentang apa ?
+Website ini merupakan website perpustakaan berbasis web yang dibuat sebagai media informasi dan layanan perpustakaan secara digital. Website bertujuan untuk memudahkan pengguna dalam mengakses informasi koleksi buku tanpa harus datang langsung ke perpustakaan.
+
+Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku berdasarkan kategori tertentu, serta melakukan pencarian untuk menemukan buku yang diinginkan. Website dirancang dengan tampilan sederhana agar mudah digunakan dan dipahami oleh semua pengguna.
 
 ---
-
 ## Kelompok: 7
 
 ### Anggota:
-
--   **Naila Putri Fahel - 45xxxx**
--   **Maghfiroh - 45xxxx**
--   **Dheka - 45xxxx**
--   **Az-Zahra - 45xxxx**
--   **Ghifari Ezra Ramadhan - 4524210041**
+- **Az-Zahra Putri - 4524210018**
+- **Dheka Airlangga - 4524210027**
+- **Maghfiroh Lisabiliana - 4524210040**
+- **Ghifari Ezra Ramadhan - 4524210041**
+- **Naila Putri Fahel - 4524210053**
 
 ---
 
@@ -25,14 +25,16 @@ Tentang apa ?
 ---
 
 ## Fitur
+### Beranda
+1. Halaman utama website perpustakaan.
+2. Menampilkan gambaran umum website dan menu navigasi utama.
 
-### A
+### Kategori Buku
+1. Menyediakan pengelompokan buku berdasarkan kategori tertentu.
+2. Membantu pengguna menemukan buku sesuai dengan jenis atau topik yang diinginkan.
 
-Desc.........
-
-### B
-
-Desc.........
+### Pencarian Buku
+1. Digunakan untuk mencari buku berdasarkan kata kunci tertentu.
 
 ---
 
@@ -42,7 +44,7 @@ Desc.........
 .
 │   index.html
 │   README.md
-│
+│   
 ├───assets
 │   ├───icons
 │   │       logo.ico
