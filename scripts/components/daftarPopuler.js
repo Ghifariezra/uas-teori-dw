@@ -14,17 +14,9 @@ export default function daftarPopuler(item) {
     zip: formats["application/octet-stream"],
   };
 
-  const downloadUrl =
-    downloadLinks.epub ||
-    downloadLinks.txt ||
-    downloadLinks.zip ||
-    "#";
-
   return `
     <div
-      class="bg-white rounded-lg shadow-md hover:shadow-xl transition
-             cursor-pointer
-             flex flex-row sm:flex-col w-full"
+      class="bg-white rounded-lg shadow-md hover:shadow-xl transition cursor-pointer flex flex-row sm:flex-col w-full"
     >
       <!-- COVER -->
       <div class="w-28 sm:w-full flex-shrink-0 flex items-stretch sm:block">
@@ -60,7 +52,7 @@ export default function daftarPopuler(item) {
       </div>
 
       <!-- CONTENT -->
-      <div class="p-3 sm:p-4 flex flex-col w-full">
+      <div class="p-3 sm:p-4 flex flex-col justify-between w-full h-full">
         <h3
           class="text-sm sm:text-base font-semibold text-gray-800 line-clamp-1"
           title="${item.title}"
