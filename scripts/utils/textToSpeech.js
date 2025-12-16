@@ -1,8 +1,10 @@
+import { translateText } from "./translateText.js";
+
 let currentUtterance = null;
 let activeButton = null;
 
 export function textToSpeech() {
-    document.addEventListener("click", (e) => {
+    document.addEventListener("click", async (e) => {
         const btn = e.target.closest(".tts-btn");
         if (!btn) return;
 
@@ -30,7 +32,7 @@ export function textToSpeech() {
         }
 
         if (btn.dataset.type === "summary") {
-            text = decodeURIComponent(btn.dataset.summary);
+            text = await translateText(decodeURIComponent(btn.dataset.summary));
             btn.textContent = "⏹ Stop Ringkasan Cerita";
         }
 
@@ -55,3 +57,12 @@ function resetButton(btn) {
             ? "🔊 Dengarkan Ringkasan Cerita"
             : "🔊 Dengarkan Ringkasan Buku";
 }
+
+
+window.addEventListener("beforeunload", () => {
+    speechSynthesis.cancel();
+});
+
+window.addEventListener("pagehide", () => {
+    speechSynthesis.cancel();
+});

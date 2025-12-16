@@ -15,7 +15,7 @@
 
 <body class="min-h-screen bg-gray-100">
     <!-- Header -->
-    <header id="header" class="flex justify-between items-center p-8 bg-white shadow-md relative z-20"></header>
+    <header id="header" class="flex justify-between items-center p-8 bg-white shadow-md relative z-100 sticky"></header>
 
     <!-- Navigation Mobile -->
     <nav id="mobile-nav"
@@ -58,7 +58,7 @@
     <!-- Footer -->
     <footer id="footer" class="bg-blue-900 text-white mt-10 p-10 rounded-t-2xl shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
     </footer>
-    
+
     <script type="module">
         import renderHeader from "./scripts/sections/header.js";
         import renderFooter from "./scripts/sections/footer.js";
@@ -68,7 +68,6 @@
         renderFooter();
         initRouter();
     </script>
-
 </body>
 
 </html>
