@@ -96,52 +96,159 @@ export default function daftarPopuler(item) {
           <div class="mt-3 flex gap-2 flex-col w-full sm:flex-row">
             ${downloadLinks.epub ? `
               <a href="${downloadLinks.epub}" download
-                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                  class="text-[10px] px-3 py-1.5
+         rounded-full font-medium
+         text-blue-700
+         bg-blue-50
+         border border-blue-100
+         hover:bg-blue-100
+         transition text-center w-full cursor-pointer">
                 EPUB
               </a>` : ""}
 
             ${downloadLinks.txt ? `
               <a href="${downloadLinks.txt}" download
-                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                  class="text-[10px] px-3 py-1.5
+         rounded-full font-medium
+         text-blue-700
+         bg-blue-50
+         border border-blue-100
+         hover:bg-blue-100
+         transition text-center w-full cursor-pointer">
                 TXT
               </a>` : ""}
 
             ${downloadLinks.mobi ? `
               <a href="${downloadLinks.mobi}" download
-                class="text-[10px] px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 text-center w-full">
+                  class="text-[10px] px-3 py-1.5
+         rounded-full font-medium
+         text-blue-700
+         bg-blue-50
+         border border-blue-100
+         hover:bg-blue-100
+         transition text-center w-full cursor-pointer">
                 MOBI
               </a>` : ""}
           </div>
         </div>
 
-        <div class>
+        <div class="relative mt-3">
+          <!-- Trigger Button -->
+          <button
+              class="w-full px-3 py-2.5
+                flex items-center justify-between
+                bg-blue-50 text-blue-700
+                rounded-lg text-xs font-semibold
+                hover:bg-blue-100
+                transition-all duration-200
+                group cursor-pointer"
+            data-dropdown-trigger
+          >
+            <span class="flex items-center sm:gap-2">
+              <svg class="w-6 h-6 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 5a7 7 0 0 0-7 7v1.17c.313-.11.65-.17 1-.17h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a3 3 0 0 1-3-3v-6a9 9 0 0 1 18 0v6a3 3 0 0 1-3 3h-2a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h2c.35 0 .687.06 1 .17V12a7 7 0 0 0-7-7Z" clip-rule="evenodd"/>
+              </svg>
+              <span class="line-clamp-1">Dengar Ringkasan</span>
+            </span>
+            <svg
+              class="w-4 h-4 text-blue-700
+                    transition-transform duration-200
+                    group-[.open]:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path fill-rule="evenodd"
+                d="M18.425 10.271C19.499 8.967 18.57 7 16.88 7H7.12c-1.69 0-2.618 1.967-1.544 3.271l4.881 5.927a2 2 0 0 0 3.088 0l4.88-5.927Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            class="dropdown hidden absolute z-40 mt-2 w-full
+                  bg-white border border-gray-200
+                  rounded-lg shadow-lg p-2 space-y-1"
+            >
               <button
-                class="tts-btn mt-2 w-full py-1.5 sm:py-2
-                      bg-gray-100 text-gray-700 rounded-md
-                      text-[11px] sm:text-xs font-medium
-                      hover:bg-gray-200 transition cursor-pointer"
+                class="tts-btn group w-full
+                    flex items-center gap-3
+                    px-3 py-2.5 text-xs
+                    text-emerald-700
+                    rounded-lg
+                    hover:bg-emerald-50 transition cursor-pointer"
                 data-type="book"
                 data-title="${item.title}"
                 data-author="${author}"
                 data-genre="${genre}"
                 data-download="${downloadCount}"
                 data-formats="${Object.keys(downloadLinks)
-                    .filter(key => downloadLinks[key])
-                    .join(', ')}"
+      .filter(key => downloadLinks[key])
+      .join(', ')}"
               >
-                🔊 Dengarkan Ringkasan Buku
+                <span
+                  class="flex items-center justify-center
+                        w-4 h-4
+                        rounded-md bg-gray-200
+                        group-hover:bg-gray-300
+                        transition"
+                >
+                  <svg
+                    class="w-2 h-2 text-blue-700"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill-rule="evenodd"
+                      d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+
+                <span class="flex-1 text-left">
+                  Buku
+                </span>
               </button>
 
               <button
-              class="tts-btn mt-2 w-full py-1.5 sm:py-2
-                    bg-gray-100 text-gray-700 rounded-md
-                    text-[11px] sm:text-xs font-medium
-                    hover:bg-gray-200 transition cursor-pointer"
-              data-type="summary"
-              data-summary="${encodeURIComponent(summary)}"
-            >
-              🔊 Dengarkan Ringkasan Cerita
-            </button>
+                class="tts-btn group w-full
+                  flex items-center gap-3
+                  px-3 py-2.5 text-xs
+                  text-blue-700
+                  rounded-lg
+                  hover:bg-blue-50 transition cursor-pointer"
+                data-type="summary"
+                data-summary="${encodeURIComponent(summary)}"
+              >
+                <span
+                  class="flex items-center justify-center
+                        w-4 h-4
+                        rounded-md bg-gray-200
+                        group-hover:bg-gray-300
+                        transition"
+                >
+                  <svg
+                    class="w-2 h-2 text-blue-700"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill-rule="evenodd"
+                      d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span class="flex-1 text-left">
+                  Cerita
+                </span>
+              </button>
+            </div>
         </div>
 
         <a

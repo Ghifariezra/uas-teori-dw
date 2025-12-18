@@ -1,10 +1,11 @@
 import renderBeranda from "./sections/beranda.js";
 import renderKategori from "./sections/kategori.js";
 import Loader from "./utils/load.js";
-import bukuData from "./data/bukuData.js";
-import { kategoriData } from "./data/kategoriData.js";
 import { getBasePath } from "./utils/getBasePath.js";
 import { textToSpeech } from "./utils/textToSpeech.js";
+import { toggleDropdown } from "./utils/toggleDropdown.js";
+import { preload } from "./utils/preload.js";
+import { replaceHash } from "./utils/replaceHash.js";
 
 window.goHome = function () {
     window.location.href = getBasePath();
@@ -29,33 +30,11 @@ export default function initRouter() {
     const initial = location.hash.replace("#", "") || "beranda";
     loader.loadPage(initial, content, routes);
 
-    textToSpeech();
-
-    // ===============================
-    // 🔥 PREFETCH SAAT HOVER NAV
-    // ===============================
-    document.addEventListener("mouseover", (e) => {
-        const page = e.target.dataset.page;
-        if (page === "kategori") {
-            // preload populer
-            bukuData({ sort: "popular", page: 1 });
-
-            // preload beberapa kategori penting
-            kategoriData.map(
-                (item) =>
-                    bukuData({
-                        topic: item.subject,
-                        sort: "ascending"
-                    })
-            );
-        }
+    document.addEventListener("click", async (e) => {
+        toggleDropdown(e);
+        await textToSpeech(e);
+        replaceHash(e, loader, content, routes);
     });
 
-    document.addEventListener("click", (e) => {
-        const page = e.target.dataset.page;
-        if (page) {
-            loader.loadPage(page, content, routes);
-            history.pushState({ page }, "", `#${page}`);
-        }
-    });
+    document.addEventListener("mouseover", (e) => preload(e, loader, content, routes));
 }
