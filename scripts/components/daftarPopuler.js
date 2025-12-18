@@ -193,7 +193,7 @@ export default function daftarPopuler(item) {
                         w-4 h-4
                         rounded-md bg-gray-200
                         group-hover:bg-gray-300
-                        transition"
+                        transition tts-icon"
                 >
                   <svg
                     class="w-2 h-2 text-blue-700"
@@ -209,7 +209,7 @@ export default function daftarPopuler(item) {
                   </svg>
                 </span>
 
-                <span class="flex-1 text-left">
+                <span class="tts-label font-medium flex-1 text-left">
                   Buku
                 </span>
               </button>
@@ -229,7 +229,7 @@ export default function daftarPopuler(item) {
                         w-4 h-4
                         rounded-md bg-gray-200
                         group-hover:bg-gray-300
-                        transition"
+                        transition tts-icon"
                 >
                   <svg
                     class="w-2 h-2 text-blue-700"
@@ -244,7 +244,7 @@ export default function daftarPopuler(item) {
                     />
                   </svg>
                 </span>
-                <span class="flex-1 text-left">
+                <span class="tts-label font-medium flex-1 text-left">
                   Cerita
                 </span>
               </button>
