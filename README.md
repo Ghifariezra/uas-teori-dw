@@ -128,3 +128,6 @@ File buku otomatis diunduh ke perangkat pengguna.
 - Mengurangi ketergantungan pada akses fisik ke perpustakaan.
 
 Dengan adanya fitur ini, website Readorium tidak hanya berfungsi sebagai media informasi, tetapi juga sebagai sarana layanan digital yang interaktif dan bermanfaat bagi pengguna.
+```
+
+**Bukti Tanda Responsive**
