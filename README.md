@@ -88,3 +88,43 @@ Melalui website ini, pengguna dapat melihat daftar buku, mengelompokkan buku ber
     └───utils
             load.js
 ```
+**Fitur Download Buku**
+
+Website Readorium ini menyediakan fitur download buku digital untuk memudahkan pengguna mengakses koleksi buku secara offline. Fitur ini memungkinkan pengguna mengunduh buku dalam beberapa format file yang disesuaikan dengan kebutuhan perangkat masing-masing.
+
+**Format Download yang Tersedia**
+
+Pengguna dapat memilih salah satu dari format berikut:
+
+1. EPUB
+Format e-book yang mendukung tampilan responsif dan nyaman dibaca di perangkat mobile maupun aplikasi e-reader.
+
+2. TXT
+Format teks sederhana tanpa styling, ringan, dan kompatibel di semua perangkat.
+
+3. MOBI
+Format e-book yang ditujukan untuk perangkat e-reader tertentu dengan struktur navigasi sederhana.
+
+**Cara Kerja Fitur Download**
+
+- Pengguna membuka halaman detail buku.
+
+-  Sistem menampilkan tombol pilihan format download (EPUB, TXT, MOBI).
+
+- Pengguna memilih format yang diinginkan.
+
+- Sistem memproses data buku sesuai format yang dipilih.
+
+File buku otomatis diunduh ke perangkat pengguna.
+
+**Tujuan dan Manfaat Fitur**
+
+- Memudahkan pengguna membaca buku secara offline.
+
+- Memberikan fleksibilitas format sesuai perangkat pengguna.
+
+- Meningkatkan kualitas layanan perpustakaan digital.
+
+- Mengurangi ketergantungan pada akses fisik ke perpustakaan.
+
+Dengan adanya fitur ini, website Readorium tidak hanya berfungsi sebagai media informasi, tetapi juga sebagai sarana layanan digital yang interaktif dan bermanfaat bagi pengguna.
